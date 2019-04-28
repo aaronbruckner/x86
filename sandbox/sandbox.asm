@@ -1,13 +1,13 @@
 section .data
 
 section .text
-  global	_start
+    global	_start
 
 _start:
-	nop
+	  nop
 
-  ; Sandbox code start
+    ; Sandbox code start
 
-  ; Sandbox code stop
+    ; Sandbox code stop
 
-	nop
+    nop
