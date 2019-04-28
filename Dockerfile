@@ -6,5 +6,6 @@ RUN apt-get -y install gcc
 RUN apt-get -y install nasm
 RUN apt-get -y install vim
 RUN apt-get -y install ddd
+RUN apt-get -y install build-essential
 
 CMD bash
