@@ -34,7 +34,7 @@ processCharacterStart:
     ; If individual character is between 97 (a) and 122 (z), subtract 32 from it (converting it to upper case).
     cmp byte[buffer + ebx], 97          ; ebx contains current offset into buffer.
     jl processCharacterLoopCheck    ; Continue if current byte is less than 97
-    cmp byte[buffer + ebx], 122
+    cmp byte [buffer + ebx], 122
     jg processCharacterLoopCheck    ; Continue if current byte is greater than 122
 
     ; At this point, the character is a-z. Convert to upper case by subtracting 32.
@@ -51,6 +51,10 @@ processCharacterLoopCheck:
     mov ebx, 1            ; Use file - Stdout
     mov ecx, buffer       ; Use buffer that we've read bytes into and modified if required.
     int 80h               ; Execute Write
+
+    ; If return is less than 0, error occurred
+    cmp eax, 0
+    jl failure
 
     ; Read more characters from stdin if available and repeat.
     jmp _start
