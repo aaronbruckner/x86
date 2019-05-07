@@ -37,3 +37,6 @@ open -a XQuartz && socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"
 
 Now all you have to do is run ```ddd <executable>``` and the GUI application will show on your host. Be sure to use the
 `dwarf` debugging format when compiling via nasm.
+
+## References
+* Sys Call Table: https://www.informatik.htw-dresden.de/~beck/ASM/syscall_list.html
